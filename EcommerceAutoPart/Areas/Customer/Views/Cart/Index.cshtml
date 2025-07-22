@@ -1,0 +1,109 @@
+﻿@model ShoppingCartVM
+@{
+    ViewData["Title"] = "CartView";
+    Layout = "~/Views/Shared/_InnerLayout.cshtml";
+}
+
+@section MainSection
+{
+    <!-- breadcrumb-section -->
+    <div class="breadcrumb-section breadcrumb-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <p>Auto Part</p>
+                        <h1>Cart</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end breadcrumb section -->
+    <div class="cart-section mt-150 mb-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12">
+                    <div class="cart-table-wrap">
+                        <table class="cart-table">
+                            <thead class="cart-table-head">
+                                <tr class="table-head-row">
+                                    <th class="product-remove"></th>
+                                    <th class="product-image">Product Image</th>
+                                    <th class="product-name">Name</th>
+                                    <th class="product-price">Price</th>
+                                    <th class="product-quantity">Quantity</th>
+                                    <th class="product-total">Total</th>
+                                   <th class="product-quantity">Add/Minus</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.ShoppingCartList!)
+                                {
+                                    <tr class="table-body-row">
+                                        <td class="product-remove"><a asp-action="remove" asp-route-cartId="@item.Id"><i class="far fa-window-close"></i></a></td>
+                                        <td class="product-image"><img src="@item.AutoPart!.AutoPartPhoto" alt=""></td>
+                                        <td class="product-name">@item.AutoPart.AutoPartName</td>
+                                        <td class="product-price">$@item.AutoPart.Price</td>
+                                        <td class="product-quantity">@item.Count</td>
+                                        <td class="product-total">@((item.Price * item.Count).ToString("c"))</td>
+                                        <td>
+                                            <a asp-action="plus" asp-route-cartId="@item.Id" class="custom-button plus-button">
+                                                <span class="button-text">+</span>
+                                            </a>
+                                            <a asp-action="minus" asp-route-cartId="@item.Id" class="custom-button minus-button">
+                                                <span class="button-text">-</span>
+                                            </a>
+                                        </td>
+
+                                      
+                                   
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="total-section">
+                        <table class="total-table">
+                            <thead class="total-table-head">
+                                <tr class="table-total-row">
+                                    <th>Total</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="total-data">
+                                    <td><strong>Subtotal: </strong></td>
+                                    <td>@(Model.OrderHeader.OrderTotal.ToString("c"))</td>
+                                </tr>
+                                <tr class="total-data">
+                                    <td><strong>Shipping: </strong></td>
+                                    <td>$10</td>
+                                </tr>
+                                <tr class="total-data">
+                                    <td><strong>Total: </strong></td>
+                                    <td>@((Model.OrderHeader.OrderTotal + 10.00).ToString("c"))</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="cart-buttons">
+                            <a asp-area="Customer" asp-controller="Home" asp-action="Index" class="boxed-btn">Update Cart</a>
+                            <a asp-action="Summary" class="boxed-btn black">Check Out</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+
+

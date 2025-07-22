@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Car>
+@{
+    ViewData["Title"] = "CarView";
+    Layout = "~/Views/Shared/_InnerLayout.cshtml";
+}
+
+
+@section MainSection{
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Auto Part</p>
+						<h1>Shop</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+	<!-- products -->
+	<div class="product-section mt-150 mb-150">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="product-filters">
+						<ul>
+							<li class="active" data-filter="*">All</li>
+							@{
+
+								var uniqueBrandNames = new HashSet<string>();
+								foreach (var item in Model)
+								{
+									if (!uniqueBrandNames.Contains(item.Brand!.BrandName!))
+									{
+										<li data-filter=".brand-@item.BrandId">@item.Brand.BrandName</li>
+										uniqueBrandNames.Add(item.Brand.BrandName!);
+									}
+								}
+							}
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="row product-lists">
+				@foreach(var item in Model)
+				{
+					<div class="col-lg-4 col-md-6 text-center brand-@item.Brand!.Id">
+						<div class="single-product-item">
+							<div class="product-image">
+								<a asp-controller="Home" asp-action="AutoPartView" asp-route-carId="@item.Id"><img src="@item.CarPhoto" alt=""></a>
+							</div>
+							<h3>@item.CarName</h3>
+							<a asp-controller="Home" asp-action="AutoPartView" asp-route-carId="@item.Id" class="cart-btn"><i class="fas fa-shopping-cart"></i> See Parts</a>
+
+						 	@* <a asp-controller="CarsView" asp-action="AutoPartView" asp-route-carId="@item.Id" class="cart-btn"><i class="fas fa-shopping-cart"></i> See Parts</a>	 *@
+
+						</div>
+					</div>
+				}
+
+			</div>
+
+		</div>
+	</div>
+	<!-- end products -->
+}
+
+@* 
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="product-filters">
+				<ul>
+					<li class="active" data-filter="*">All</li>
+					@{
+						var uniqueBrands = new Dictionary<int, string>();
+						foreach (var item in Model)
+						{
+							if (!uniqueBrands.ContainsKey(item.Brand.BrandId))
+							{
+								<li data-filter=".brand-@item.Brand.BrandId" data-brand-id="@item.Brand.BrandId">@item.Brand.BrandName</li>
+								uniqueBrands.Add(item.Brand.BrandId, item.Brand.BrandName);
+							}
+						}
+					}
+				</ul>
+			</div>
+		</div>
+	</div> *@
+
+@* <div class="row product-lists">
+	@foreach (var item in Model)
+	{
+		<div class="col-lg-4 col-md-6 text-center brand-@item.Brand.BrandId">
+			<div class="single-product-item">
+				<div class="product-image">
+					<a asp-controller="CarsView" asp-action="AutoPartView"><img src="@item.CarPhoto" alt=""></a>
+				</div>
+				<h3>@item.CarName</h3>
+
+				<a asp-controller="CarsView" asp-action="AutoPartView" class="cart-btn"><i class="fas fa-shopping-cart"></i> See Parts</a>
+			</div>
+		</div>
+	}
+
+</div> *@

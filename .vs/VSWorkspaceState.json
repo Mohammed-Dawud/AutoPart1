@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\EcommerceAutoPart",
+    "\\EcommerceAutoPart.DataAccess",
+    "\\EcommerceAutoPart.DataAccess\\DBInitializer"
+  ],
+  "SelectedNode": "\\EcommerceAutoPart.DataAccess\\DBInitializer\\DbInitializer.cs",
+  "PreviewInSolutionExplorer": false
+}

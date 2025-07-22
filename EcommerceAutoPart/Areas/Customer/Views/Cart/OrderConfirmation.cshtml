@@ -1,0 +1,36 @@
+﻿@model int
+@{
+    ViewData["Title"] = "Order Confirmation View";
+    Layout = "~/Views/Shared/_InnerLayout.cshtml";
+}
+@section MainSection
+{
+    <div class="breadcrumb-section breadcrumb-bg">
+        <div class="container">
+            <div class="row">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 offset-lg-1 text-center">
+                            <div class="hero-text">
+                                <div class="hero-text-tablecell">
+                                    <p class="subtitle" style="font-size: 24px; font-weight: bold;">Auto Part</p>
+                                    <h1 class="display-4" style="font-size: 48px; font-weight: bold;">Thank U ,Order Accepted!</h1>
+                                    <p style="font-size: 24px; font-weight: bold;">
+                                        <strong style="color: white;">Your Order Number is : #@Model</strong>
+                                    </p>
+                                    <div class="hero-btns my-4">
+                                        <a asp-controller="Home" asp-action="CarView" class="btn btn-primary boxed-btn mx-2" style="font-size: 20px;">Visit Shop</a>
+                                        <a asp-controller="Home" asp-action="Contact" class="btn btn-outline-secondary bordered-btn mx-2" style="font-size: 20px;">Contact Us</a>
+                                    </div>
+                                    <p class="text-success mt-4" style="font-size: 24px; font-weight: bold;">Your Order has been placed successfully.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

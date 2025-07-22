@@ -1,0 +1,27 @@
+C:\Users\ROG STRIX\Desktop\AutoPart\EcommerceAutoPart.Utility\bin\Debug\net8.0\EcommerceAutoPart.Utility.deps.json
+C:\Users\ROG STRIX\Desktop\AutoPart\EcommerceAutoPart.Utility\bin\Debug\net8.0\EcommerceAutoPart.Utility.dll
+C:\Users\ROG STRIX\Desktop\AutoPart\EcommerceAutoPart.Utility\bin\Debug\net8.0\EcommerceAutoPart.Utility.pdb
+C:\Users\ROG STRIX\Desktop\AutoPart\EcommerceAutoPart.Utility\obj\Debug\net8.0\EcommerceAutoPart.Utility.csproj.AssemblyReference.cache
+C:\Users\ROG STRIX\Desktop\AutoPart\EcommerceAutoPart.Utility\obj\Debug\net8.0\EcommerceAutoPart.Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ROG STRIX\Desktop\AutoPart\EcommerceAutoPart.Utility\obj\Debug\net8.0\EcommerceAutoPart.Utility.AssemblyInfoInputs.cache
+C:\Users\ROG STRIX\Desktop\AutoPart\EcommerceAutoPart.Utility\obj\Debug\net8.0\EcommerceAutoPart.Utility.AssemblyInfo.cs
+C:\Users\ROG STRIX\Desktop\AutoPart\EcommerceAutoPart.Utility\obj\Debug\net8.0\EcommerceAutoPart.Utility.csproj.CoreCompileInputs.cache
+C:\Users\ROG STRIX\Desktop\AutoPart\EcommerceAutoPart.Utility\obj\Debug\net8.0\EcommerceAutoPart.Utility.dll
+C:\Users\ROG STRIX\Desktop\AutoPart\EcommerceAutoPart.Utility\obj\Debug\net8.0\refint\EcommerceAutoPart.Utility.dll
+C:\Users\ROG STRIX\Desktop\AutoPart\EcommerceAutoPart.Utility\obj\Debug\net8.0\EcommerceAutoPart.Utility.pdb
+C:\Users\ROG STRIX\Desktop\AutoPart\EcommerceAutoPart.Utility\obj\Debug\net8.0\ref\EcommerceAutoPart.Utility.dll
+C:\Users\ROG STRIX\Documents\New folder\AutoPart\EcommerceAutoPart.Utility\bin\Debug\net8.0\EcommerceAutoPart.Utility.deps.json
+C:\Users\ROG STRIX\Documents\New folder\AutoPart\EcommerceAutoPart.Utility\bin\Debug\net8.0\EcommerceAutoPart.Utility.dll
+C:\Users\ROG STRIX\Documents\New folder\AutoPart\EcommerceAutoPart.Utility\bin\Debug\net8.0\EcommerceAutoPart.Utility.pdb
+C:\Users\ROG STRIX\Documents\New folder\AutoPart\EcommerceAutoPart.Utility\bin\Debug\net8.0\EcommerceAutoPart.Models.dll
+C:\Users\ROG STRIX\Documents\New folder\AutoPart\EcommerceAutoPart.Utility\bin\Debug\net8.0\EcommerceAutoPart.Models.pdb
+C:\Users\ROG STRIX\Documents\New folder\AutoPart\EcommerceAutoPart.Utility\obj\Debug\net8.0\EcommerceAutoPart.Utility.csproj.AssemblyReference.cache
+C:\Users\ROG STRIX\Documents\New folder\AutoPart\EcommerceAutoPart.Utility\obj\Debug\net8.0\EcommerceAutoPart.Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ROG STRIX\Documents\New folder\AutoPart\EcommerceAutoPart.Utility\obj\Debug\net8.0\EcommerceAutoPart.Utility.AssemblyInfoInputs.cache
+C:\Users\ROG STRIX\Documents\New folder\AutoPart\EcommerceAutoPart.Utility\obj\Debug\net8.0\EcommerceAutoPart.Utility.AssemblyInfo.cs
+C:\Users\ROG STRIX\Documents\New folder\AutoPart\EcommerceAutoPart.Utility\obj\Debug\net8.0\EcommerceAutoPart.Utility.csproj.CoreCompileInputs.cache
+C:\Users\ROG STRIX\Documents\New folder\AutoPart\EcommerceAutoPart.Utility\obj\Debug\net8.0\Ecommerc.CC017312.Up2Date
+C:\Users\ROG STRIX\Documents\New folder\AutoPart\EcommerceAutoPart.Utility\obj\Debug\net8.0\EcommerceAutoPart.Utility.dll
+C:\Users\ROG STRIX\Documents\New folder\AutoPart\EcommerceAutoPart.Utility\obj\Debug\net8.0\refint\EcommerceAutoPart.Utility.dll
+C:\Users\ROG STRIX\Documents\New folder\AutoPart\EcommerceAutoPart.Utility\obj\Debug\net8.0\EcommerceAutoPart.Utility.pdb
+C:\Users\ROG STRIX\Documents\New folder\AutoPart\EcommerceAutoPart.Utility\obj\Debug\net8.0\ref\EcommerceAutoPart.Utility.dll

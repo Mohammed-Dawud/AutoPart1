@@ -1,0 +1,54 @@
+﻿@model AutoPartViewModel
+@{
+    ViewData["Title"] = "Auto Parts for Car";
+    Layout = "~/Views/Shared/_InnerLayout.cshtml";
+}
+
+@section MainSection {
+    <div class="breadcrumb-section breadcrumb-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <p>Auto Parts</p>
+                        <h1>Select Auto Parts</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-section mt-150 mb-150">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model.AutoParts!)
+                {
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <form asp-action="AddToCart" method="post">
+                            <input type="hidden" name="AutoPartId" value="@item.Id" />
+                            <div class="single-product">
+                                <div class="single-product-img">
+                                    <img src="@item.AutoPartPhoto" alt="@item.AutoPartName" height="300" width="300" />
+                                </div>
+                                <div class="single-product-content">
+                                    <h3>@item.AutoPartName</h3>
+                                    <p>@item.AutoPartDescription</p>
+                                    <p><strong>Price:</strong> $@item.Price</p>
+
+                                    <div class="form-group">
+                                        <label for="Quantity">Quantity:</label>
+                                        <input type="number" name="Count" value="1" min="1" class="form-control" />
+                                    </div>
+
+                                    <button type="submit" class="cart-btn">
+                                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}

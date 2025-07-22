@@ -1,0 +1,172 @@
+﻿@model ShoppingCartVM
+@{
+    ViewData["Title"] = "AutoPartView";
+    Layout = "~/Views/Shared/_InnerLayout.cshtml";
+}
+
+@section MainSection
+{
+    <!-- breadcrumb-section -->
+    <div class="breadcrumb-section breadcrumb-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+
+                        <h1>Check Out</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end breadcrumb section -->
+    <!-- check out section -->
+    <form method="post">
+        <div class="checkout-section mt-150 mb-150">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="checkout-accordion-wrap">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card single-accordion">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Billing Address
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="billing-address-form">
+
+                                                <p>
+                                                    <input asp-for="OrderHeader!.Name" class="form-control" />
+                                                    <span asp-validation-for="OrderHeader!.Name" class="text-danger"></span>
+                                                </p>
+                                                <p>
+                                                    <input asp-for="OrderHeader!.PhoneNumber" class="form-control" />
+                                                    <span asp-validation-for="OrderHeader!.PhoneNumber" class="text-danger"></span>
+                                                </p>
+                                                <p>
+                                                    <input asp-for="OrderHeader!.StreetAddress" class="form-control" />
+                                                    <span asp-validation-for="OrderHeader!.StreetAddress" class="text-danger"></span>
+                                                </p>
+                                                <p>
+                                                    <input asp-for="OrderHeader!.City" class="form-control" />
+                                                    <span asp-validation-for="OrderHeader!.City" class="text-danger"></span>
+                                                </p>
+                                                <p>
+                                                    <input asp-for="OrderHeader!.PostalCode" class="form-control" />
+                                                    <span asp-validation-for="OrderHeader!.PostalCode" class="text-danger"></span>
+                                                </p>
+                                                <p>
+                                                    <input asp-for="OrderHeader!.State" class="form-control" />
+                                                    <span asp-validation-for="OrderHeader!.State" class="text-danger"></span>
+                                                </p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card single-accordion">
+                                    <div class="card-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                Shipping Address
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shipping-address-form">
+                                                <p>Your shipping address form is here.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card single-accordion">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                Card Details
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="card-details">
+                                                <p>Your card details goes here.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="order-details-wrap">
+                            <table class="order-details">
+                                <thead>
+                                    <tr>
+                                        <th>Your order Details</th>
+                                        <th>Price</th>
+                                        <th>Total Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="order-details-body">
+                                    <tr>
+                                        <td>Product</td>
+                                        <td>Price</td>
+                                        <td>Total</td>
+
+                                    </tr>
+                                    @foreach (var details in Model.ShoppingCartList)
+                                    {
+                                        <tr>
+                                            <td>@details.AutoPart.AutoPartName (@details.Count)</td>
+                                            <td>@details.Price</td>
+                                            <td>@((details.Price * details.Count).ToString("c"))</td>
+                                        </tr>
+                                    }
+                                    <tr>
+                                        <td>Shipping</td>
+                                        <td>$10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td>@((Model.OrderHeader.OrderTotal + 10.00).ToString("c"))</td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col-12 col-md-8 pt-2">
+                                        <p style="color:maroon; font-size:14px;">
+                                            Estimate Arrival Date:
+                                            @DateTime.Now.AddDays(7).ToShortDateString() - @DateTime.Now.AddDays(14).ToShortDateString()
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="boxed-btn">
+                                <button type="submit" value="Place Order" class="boxed-btn">Place Order</button>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+    <!-- end check out section -->
+}
